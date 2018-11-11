@@ -1,0 +1,19 @@
+<h1>Summarize your booking:</h1>
+<p><% flight = Flight.find(params[:choice]) %>
+	Flight number: <%= flight.id %>
+	<br />
+	<br />
+	Departure date: <%= flight.departure_date %>
+	<br />
+	<br />
+	Duration: <%= flight.duration %> minutes
+	<br />
+	<br />
+	Departure airport: <%= flight.departure_airport.airport_code %>
+	<br />
+	<br />
+	Arrival airport: <%= flight.arrival_airport.airport_code %>
+	<br />
+	<br />
+	Passengers: <%= params[:passengers] %>
+</p>
