@@ -2,9 +2,10 @@
 
 	<h1>Search Results:</h1>
 
+
+	<%= form_tag('booking/new', {method: :get}) do %>	
 	
 	<% @flight.each do |flight| %>
-	<%= form_tag('booking/new', {method: :get}) do %>
 		We found the flight number: <%= flight.id %>
 		<table>
 			<tr>
@@ -27,13 +28,13 @@
 				<td>
 					<%= hidden_field_tag 'passengers', params[:passengers] %>
 			    <%= radio_button_tag :choice, flight.id %>	Choose the flight number: <%= flight.id %>
-					<%= submit_tag "Order the flight" %>
+
 				</td>
 			</tr>
 		</table>
 
 	<% end %>
-
+	<%= submit_tag "Order the flight" %>
 	<% end %>
 
 <% end %>
